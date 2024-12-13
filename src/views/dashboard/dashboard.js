@@ -33,7 +33,7 @@ export default function Dashboard() {
   };
   
   useEffect(() => {
-    fetch('https://quotes-api-self.vercel.app/quote')
+    fetch('https://qapi.vercel.app/api/random')
   .then(response => response.json())
   .then(data => {
     // Handle the retrieved quote
