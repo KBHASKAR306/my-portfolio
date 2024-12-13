@@ -39,7 +39,7 @@ export default function Dashboard() {
     // Handle the retrieved quote
     let content = data.quote;
     setQuote(content);
-    console.log(content)
+    // console.log(content)
 
   })
   .catch(error => {
