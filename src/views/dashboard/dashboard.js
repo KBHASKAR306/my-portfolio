@@ -31,19 +31,21 @@ export default function Dashboard() {
       }
     }
   };
-
+  
   useEffect(() => {
-    axios
-      .get("https://api.quotable.io/quotes/random")
-      .then((response) => {
-        let content = response.data.content;
-        setQuote(content);
-        // console.log(content)
-      })
-      .catch((error) => {
-        setQuote("");
-        console.error("Error fetching quote:", error);
-      });
+    fetch('https://quotes-api-self.vercel.app/quote')
+  .then(response => response.json())
+  .then(data => {
+    // Handle the retrieved quote
+    let content = data.quote;
+    setQuote(content);
+    console.log(content)
+
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
   }, []);
 
   return (
